@@ -32,12 +32,26 @@ function calcularTriangulo(lado1,lado2,base,altura){
         area:(base * altura) /2,
     };
 }
+function calcularAlturaTriangulo(lado1,base){
+    if(lado1 == base){
+        console.warn("no es un triangulo isoceles")
+    }
+    else{
+        // h = raizcuadrado(lado1**2 - (b**2/4))
+        return altura = Math.sqrt( (lado1 ** 2) - ((base ** 2) / 4));
+    }
+}
+
+
+
 function calcularCuadrado(lado){
     return{
         perimetro: lado * 4,
         area:lado * lado,
     };
 }
+
+
 console.log
  (
     {
@@ -50,3 +64,30 @@ console.log
     }
  )
  console.groupEnd("Triangulo")
+
+ console.group("Circulo")
+
+const radioCirculo = 3;
+const diametroCirculo = radioCirculo * 2;
+const PI = 3.1415;
+
+const circunferencia = diametroCirculo * PI;
+const areCirculo = (radioCirculo ** 2) * PI;
+
+console.log({
+    radioCirculo,
+    diametroCirculo,
+    PI,
+    circunferencia,
+    areCirculo,
+});
+
+function calcularCirculo(radio){
+    const diametro = radio * 2;
+    const radioAlCuadrado = Math.pow(radio, 2)
+    return{
+        circunferencia: diametro * Math.PI.toFixed(3),
+        area: radioAlCuadrado * Math.PI.toFixed(3),
+    }
+}
+ console.groupEnd("Circulo")
